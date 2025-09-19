@@ -55,13 +55,15 @@ Hệ thống gồm 2 phần chính:
   - Kết nối tới server qua IP và port.
   - Gửi chuỗi lệnh/nhập liệu và nhận phản hồi từ server.
   - Hiển thị phản hồi theo dòng.
-  ![alt text](client_csl.png)
+  ![alt text](menu_client.png)
 
 - **GUI Client (Swing)**
   - Trường nhập IP/Port để kết nối.
   - Nút Connect / Disconnect.
   - Các nút chức năng: Shutdown, Restart, Cancel (tên nút dựa theo file `interface_client.java`).
+    ![alt text](client_csl.png)
     ![alt text](client_interface.png)
+
   - Vùng log hiển thị trạng thái và phản hồi từ server.
   - Lưu ý: mọi thao tác mạng được khuyến nghị chạy trên thread nền (không block Event Dispatch Thread).
 
