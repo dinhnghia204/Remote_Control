@@ -95,18 +95,6 @@ javac -version
 
 ![alt text](CTR.png)
 
-### Biên dịch (compile)
-Từ `project-root`:
-```bash
-# tạo thư mục output
-mkdir -p out
-
-# biên dịch tất cả file Java trong src
-javac -d out src/rc/server/server.java src/rc/client/client.java src/rc/client/interface_client.java
-```
-
-> Lưu ý: code của bạn đang dùng package `rc.server` và `rc.client`. Khi dùng `javac` hãy đảm bảo đường dẫn file và package khớp.
-
 ### Chạy Server
 ```bash
 # chạy server (lớp trong package)
