@@ -53,9 +53,11 @@ Hệ thống gồm 2 phần chính:
 
 - **Console Client**
   - Kết nối tới server qua IP và port.
+
   - Gửi chuỗi lệnh/nhập liệu và nhận phản hồi từ server.
+![alt text](menu_client.png)
   - Hiển thị phản hồi theo dòng.
-  ![alt text](menu_client.png)
+![alt text](console.png.png)
 
 - **GUI Client (Swing)**
   - Trường nhập IP/Port để kết nối.
