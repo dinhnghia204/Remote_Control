@@ -57,7 +57,7 @@ Hệ thống gồm 2 phần chính:
   - Gửi chuỗi lệnh/nhập liệu và nhận phản hồi từ server.
 ![alt text](menu_client.png)
   - Hiển thị phản hồi theo dòng.
-![alt text](console.png.png)
+![alt text](console.png)
 
 - **GUI Client (Swing)**
   - Trường nhập IP/Port để kết nối.
