@@ -122,7 +122,9 @@ java -cp out rc.client.client
 - Trong client console, chỉnh IP và port nếu cần (mặc định `localhost:5000` trong code).
 ![alt text](IP_Port.png)
 - Gõ lệnh, nhấn Enter — client gửi lên server; xem phản hồi trên console.
+
 ![alt text](menu_client.png)
+----
 ![alt text](2.jpg)
 ### Chạy GUI Client (Swing)
 ```bash
