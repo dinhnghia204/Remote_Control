@@ -55,8 +55,11 @@ Hệ thống gồm 2 phần chính:
   - Kết nối tới server qua IP và port.
 
   - Gửi chuỗi lệnh/nhập liệu và nhận phản hồi từ server.
+
 ![alt text](menu_client.png)
+  
   - Hiển thị phản hồi theo dòng.
+
 ![alt text](console.png)
 
 - **GUI Client (Swing)**
@@ -71,12 +74,16 @@ Hệ thống gồm 2 phần chính:
 
 
 ### Hình ảnh minh họa
-  - màn hình server (console).
+  - Màn hình server (console).
+
   ![alt text](server_csl.png)
-  - client console.
+
+  - Client console.
   
-  ![alt text](client_csl.png)
-  -  client GUI (interface_client).
+  ![alt text](menu_client.png)
+  ![alt text](console.png)
+
+  -  Client GUI (interface_client).
 
 ![alt text](client_interface.png)
   
