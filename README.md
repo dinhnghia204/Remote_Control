@@ -21,15 +21,13 @@
 
 ## 📖 1. Giới thiệu
 
-Ứng dụng điều khiển máy tính từ xa (Remote Control) — phiên bản đơn giản sử dụng **Socket TCP** (không dùng RMI).  
+Ứng dụng điều khiển máy tính từ xa (Remote Control) — phiên bản đơn giản sử dụng **Socket TCP** 
 Hệ thống gồm 2 phần chính:
 
 - **Server** (`rc.server.server` — file `server.java`): lắng nghe kết nối trên cổng (mặc định 5000) và xử lý các lệnh từ client.
 - **Client**:
   - **Console client** (`rc.client.client` — file `client.java`): giao diện dòng lệnh để gửi lệnh, xem phản hồi.
   - **GUI client** (`rc.client.interface_client` — file `interface_client.java`): giao diện Swing có các nút thao tác (Connect, Disconnect, Shutdown, Restart, Cancel, ...).
-
-README gốc/nguồn tham khảo ban đầu đã được chỉnh sửa để phù hợp với mã nguồn hiện tại.
 
 **Mục tiêu của project**: cho phép điều khiển một máy tính từ xa qua mạng nội bộ (demo các thao tác đơn giản như gửi lệnh, echo/ping, yêu cầu shutdown/restart — cần cấu hình bảo mật nếu dùng thật).
 
@@ -51,26 +49,32 @@ README gốc/nguồn tham khảo ban đầu đã được chỉnh sửa để ph
 - **Server**
   - Lắng nghe kết nối TCP trên cổng mặc định `5000`.
   - Nhận và phản hồi các lệnh từ client.
-  - (Nếu có) xử lý một số lệnh điều hành như `SHUTDOWN`, `RESTART` — *lưu ý: trong code mẫu cần bổ sung xác thực trước khi thực hiện lệnh nhạy cảm*.
+  - (Nếu có) xử lý một số lệnh điều hành như `SHUTDOWN`, `RESTART` — 
+   ![alt text](server_csl.png)
 
 - **Console Client**
   - Kết nối tới server qua IP và port.
   - Gửi chuỗi lệnh/nhập liệu và nhận phản hồi từ server.
   - Hiển thị phản hồi theo dòng.
+  ![alt text](client_csl.png)
 
 - **GUI Client (Swing)**
   - Trường nhập IP/Port để kết nối.
   - Nút Connect / Disconnect.
   - Các nút chức năng: Shutdown, Restart, Cancel (tên nút dựa theo file `interface_client.java`).
+  ![alt text](client_interface.png)
   - Vùng log hiển thị trạng thái và phản hồi từ server.
   - Lưu ý: mọi thao tác mạng được khuyến nghị chạy trên thread nền (không block Event Dispatch Thread).
 
-### Hình ảnh (nếu bạn có ảnh, đặt vào thư mục `docs` hoặc `images`)
-- Gợi ý đường dẫn ảnh demo:
-  - `docs/screen_server.png` — màn hình server (console).
-  - `docs/screen_client_console.png` — client console.
-  - `docs/screen_client_gui.png` — client GUI (interface_client).
-- Nếu chưa có ảnh, bạn có thể chụp màn hình khi chạy server/client và thêm vào `docs/`.
+
+### Hình ảnh minh họa
+  - màn hình server (console).
+  ![alt text](server_csl.png)
+  - client console.
+  ![alt text](client_csl.png)
+  -  client GUI (interface_client).
+  ![alt text](client_interface.png)
+- 
 
 ---
 
@@ -88,17 +92,8 @@ javac -version
 
 ### Cấu trúc file (ví dụ)
 ```
-project-root/
-  src/
-    rc/
-      server/
-        server.java
-      client/
-        client.java
-        interface_client.java
-  docs/
-    (ảnh minh hoạ)
-  README.md
+![alt text](CTR.png)
+
 ```
 
 ### Biên dịch (compile)
