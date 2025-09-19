@@ -49,7 +49,6 @@ Hệ thống gồm 2 phần chính:
 - **Server**
   - Lắng nghe kết nối TCP trên cổng mặc định `5000`.
   - Nhận và phản hồi các lệnh từ client.
-  - (Nếu có) xử lý một số lệnh điều hành như `SHUTDOWN`, `RESTART` — 
    ![alt text](server_csl.png)
 
 - **Console Client**
@@ -62,7 +61,7 @@ Hệ thống gồm 2 phần chính:
   - Trường nhập IP/Port để kết nối.
   - Nút Connect / Disconnect.
   - Các nút chức năng: Shutdown, Restart, Cancel (tên nút dựa theo file `interface_client.java`).
-  ![alt text](client_interface.png)
+    ![alt text](client_interface.png)
   - Vùng log hiển thị trạng thái và phản hồi từ server.
   - Lưu ý: mọi thao tác mạng được khuyến nghị chạy trên thread nền (không block Event Dispatch Thread).
 
@@ -71,10 +70,12 @@ Hệ thống gồm 2 phần chính:
   - màn hình server (console).
   ![alt text](server_csl.png)
   - client console.
+  
   ![alt text](client_csl.png)
   -  client GUI (interface_client).
-  ![alt text](client_interface.png)
-- 
+
+![alt text](client_interface.png)
+  
 
 ---
 
@@ -91,10 +92,8 @@ javac -version
 ```
 
 ### Cấu trúc file (ví dụ)
-```
-![alt text](CTR.png)
 
-```
+![alt text](CTR.png)
 
 ### Biên dịch (compile)
 Từ `project-root`:
@@ -114,19 +113,27 @@ javac -d out src/rc/server/server.java src/rc/client/client.java src/rc/client/i
 java -cp out rc.server.server
 ```
 Server mặc định sẽ lắng nghe cổng **5000** (nếu file server.java dùng port 5000 — kiểm tra trong source).
+  ![alt text](server_ls.png)
 
 ### Chạy Console Client
 ```bash
 java -cp out rc.client.client
 ```
 - Trong client console, chỉnh IP và port nếu cần (mặc định `localhost:5000` trong code).
+![alt text](IP_Port.png)
 - Gõ lệnh, nhấn Enter — client gửi lên server; xem phản hồi trên console.
-
+![alt text](menu_client.png)
+![alt text](2.jpg)
 ### Chạy GUI Client (Swing)
 ```bash
 java -cp out rc.client.interface_client
 ```
 - Giao diện cho phép nhập IP/Port, kết nối, gửi lệnh bằng các nút (Connect / Shutdown / Restart / Cancel).
+![alt text](client_interface.png)
+- Thực hiện các thao tác
+![alt text](Interface_fc_.jpg)
+- Hủy các thao tác đã thực hiện
+![alt text](Interface_cancel.jpg)
 - **Lưu ý về UI responsiveness**: code GUI nên chạy kết nối socket trên thread riêng; kiểm tra `interface_client.java` để đảm bảo không block Event Dispatch Thread.
 
 ### Thay đổi IP/Port
