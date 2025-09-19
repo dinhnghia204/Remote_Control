@@ -29,7 +29,7 @@ Hệ thống gồm 2 phần chính:
   - **Console client** (`rc.client.client` — file `client.java`): giao diện dòng lệnh để gửi lệnh, xem phản hồi.
   - **GUI client** (`rc.client.interface_client` — file `interface_client.java`): giao diện Swing có các nút thao tác (Connect, Disconnect, Shutdown, Restart, Cancel, ...).
 
-README gốc/nguồn tham khảo ban đầu đã được chỉnh sửa để phù hợp với mã nguồn hiện tại. :contentReference[oaicite:0]{index=0}
+README gốc/nguồn tham khảo ban đầu đã được chỉnh sửa để phù hợp với mã nguồn hiện tại.
 
 **Mục tiêu của project**: cho phép điều khiển một máy tính từ xa qua mạng nội bộ (demo các thao tác đơn giản như gửi lệnh, echo/ping, yêu cầu shutdown/restart — cần cấu hình bảo mật nếu dùng thật).
 
@@ -82,8 +82,61 @@ README gốc/nguồn tham khảo ban đầu đã được chỉnh sửa để ph
 
 Kiểm tra:
 ```bash
-#  java -version
-# -- javac -version
+java -version
+javac -version
+```
+
+### Cấu trúc file (ví dụ)
+```
+project-root/
+  src/
+    rc/
+      server/
+        server.java
+      client/
+        client.java
+        interface_client.java
+  docs/
+    (ảnh minh hoạ)
+  README.md
+```
+
+### Biên dịch (compile)
+Từ `project-root`:
+```bash
+# tạo thư mục output
+mkdir -p out
+
+# biên dịch tất cả file Java trong src
+javac -d out src/rc/server/server.java src/rc/client/client.java src/rc/client/interface_client.java
+```
+
+> Lưu ý: code của bạn đang dùng package `rc.server` và `rc.client`. Khi dùng `javac` hãy đảm bảo đường dẫn file và package khớp.
+
+### Chạy Server
+```bash
+# chạy server (lớp trong package)
+java -cp out rc.server.server
+```
+Server mặc định sẽ lắng nghe cổng **5000** (nếu file server.java dùng port 5000 — kiểm tra trong source).
+
+### Chạy Console Client
+```bash
+java -cp out rc.client.client
+```
+- Trong client console, chỉnh IP và port nếu cần (mặc định `localhost:5000` trong code).
+- Gõ lệnh, nhấn Enter — client gửi lên server; xem phản hồi trên console.
+
+### Chạy GUI Client (Swing)
+```bash
+java -cp out rc.client.interface_client
+```
+- Giao diện cho phép nhập IP/Port, kết nối, gửi lệnh bằng các nút (Connect / Shutdown / Restart / Cancel).
+- **Lưu ý về UI responsiveness**: code GUI nên chạy kết nối socket trên thread riêng; kiểm tra `interface_client.java` để đảm bảo không block Event Dispatch Thread.
+
+### Thay đổi IP/Port
+- Nếu cần kết nối tới máy khác trong mạng, chỉnh giá trị host/port trong `client.java` hoặc nhập trực tiếp trong GUI (nếu GUI có trường nhập).
+
 
 ## 📝 License
 
