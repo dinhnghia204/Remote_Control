@@ -45,7 +45,7 @@ Hệ thống gồm 2 phần chính:
 
 ## 🚀 3. Các chức năng, hình ảnh
 
-### Các chức năng chính (tương ứng với code bạn đã upload)
+### Các chức năng chính 
 - **Server**
   - Lắng nghe kết nối TCP trên cổng mặc định `5000`.
   - Nhận và phản hồi các lệnh từ client.
@@ -79,7 +79,7 @@ Hệ thống gồm 2 phần chính:
   ![alt text](server_csl.png)
 
   - Client console.
-  
+
   ![alt text](menu_client.png)
   ![alt text](console.png)
 
